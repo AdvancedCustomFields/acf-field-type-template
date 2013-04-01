@@ -41,7 +41,14 @@ This template uses moustache placeholders such as this {{field_name}} throughout
 
 ### step 2.
 
-Edit this README.md file with the apropriate information and delete all content above and including this line!
+Edit the {{field_name}}-v4.php and {{field_name}}-v3.php files (now renamed with your field name) and include your custom code in the apropriate functions. 
+Please note that v3 and v4 field classes have slightly different functions. For more information, please read:
+* http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-type/
+* http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-type-v3/
+
+### step 3.
+
+Edit this README.md file with the apropriate information and delete all content above and including the following line!
 
 -----------------------
 
