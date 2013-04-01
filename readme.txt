@@ -1,50 +1,45 @@
-=== Advanced Custom Fields: {{field_name}} Field ===
+=== Advanced Custom Fields: {{field_label}} Field ===
 Contributors: {{wp_user_name}}
-Author: {{full_name}}
-Author URI: {{website}}
-Plugin URI: {{git_url}}
-Requires at least: 3.0
-Tested up to: 3.5.1
+Tags: 
+Requires at least: 3.4
+Tested up to: 3.3.1
 Stable tag: trunk
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-
-== Copyright ==
-Copyright 2011 - 2013 {{full_name}}
-
-This software is NOT to be distributed, but can be INCLUDED in WP themes: Premium or Contracted.
-This software is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
+{{short_description}}
 
 == Description ==
 
-{{descripion}}
+{{description}}
+
+= Compatibility =
+
+This add-on will work with:
+
+* version 4 and up
+* version 3 and bellow
 
 == Installation ==
 
-This software can be treated as both a WP plugin and a theme include.
+This add-on can be treated as both a WP plugin and a theme include.
 
 = Plugin =
 1. Copy the 'acf-{{field_name}}' folder into your plugins folder
 2. Activate the plugin via the Plugins admin page
 
 = Include =
-1. Copy the 'acf-{{field_name}}' folder into your theme folder (can use sub folders)
-   * You can place the folder anywhere inside the 'wp-content' directory
-2. Edit your functions.php file and add the following code to include the field:
+1.	Copy the 'acf-{{field_name}}' folder into your theme folder (can use sub folders). You can place the folder anywhere inside the 'wp-content' directory
+2.	Edit your functions.php file and add the code below (Make sure the path is correct to include the acf-{{field_name}}.php file)
 
 `
 add_action('acf/register_fields', 'my_register_fields');
 
 function my_register_fields()
 {
-	include_once('acf-{{field_name}}/{{field_name}}.php');
+	include_once('acf-{{field_name}}/acf-{{field_name}}.php');
 }
 `
-
-3. Make sure the path is correct to include the {{field_name}}.php file
-
 
 == Changelog ==
 

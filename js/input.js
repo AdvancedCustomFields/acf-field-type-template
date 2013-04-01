@@ -1,12 +1,3 @@
-/*
-*  {{field_name}}
-*
-*  {{description}}
-*
-*  @since: {{acf_version}}
-*  @created: {{date_created}}
-*/
-
 (function($){
 	
 	
