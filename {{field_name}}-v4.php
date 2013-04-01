@@ -273,12 +273,13 @@ class acf_field_{{field_name}} extends acf_field
 	*  @date	23/01/13
 	*
 	*  @param	$value	- the value which was loaded from the database
+	*  @param	$post_id - the $post_id from which the value was loaded
 	*  @param	$field	- the field array holding all the field options
 	*
 	*  @return	$value	- the modified value
 	*/
 	
-	function format_value( $value, $field )
+	function format_value( $value, $post_id, $field )
 	{
 		// defaults?
 		/*
@@ -303,12 +304,13 @@ class acf_field_{{field_name}} extends acf_field
 	*  @date	23/01/13
 	*
 	*  @param	$value	- the value which was loaded from the database
+	*  @param	$post_id - the $post_id from which the value was loaded
 	*  @param	$field	- the field array holding all the field options
 	*
 	*  @return	$value	- the modified value
 	*/
 	
-	function format_value_for_api( $value, $field )
+	function format_value_for_api( $value, $post_id, $field )
 	{
 		// defaults?
 		/*
