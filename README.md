@@ -10,16 +10,27 @@ This repository holds a starting kit to create a field type Add-on with these ab
 For more information,please read the documentation here:
 http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-type/
 
-## step 1.
+### Structure
+
+* /css :  folder for .css files.
+* /images : folder for image files
+* /js : folder for .js files
+* /lang : folder for .po and .mo files
+* acf-{{field_name}}.php : Main add-on file. This file acts as the WP plugin and includes the neccessary field file
+* {{field_name}}-v4.php : Field class compatible with ACF version 4 
+* {{field_name}}-v3.php : Field class compatible with ACF version 3
+* readme.txt : WordPress readme file to be used by the wordpress repository if this addon is also uploaded to WP 
+
+### step 1.
 
 This template uses moustache placeholders such as this {{field_name}} throughout the file names and code. Use the list of placeholders below to do a 'find and replace'. The list below shows an example for a field called 'Google Maps'
 
-### General
+**General**
 
 * {{field_name}} : google_maps (used for class & file names so please use '_' instead of '-')
 * {{field_label}} : Google Maps
 
-### Readme
+**Readme**
 
 * {{wp_user_name}} : elliotcondon
 * {{full_name}} : Elliot Condon
@@ -28,7 +39,7 @@ This template uses moustache placeholders such as this {{field_name}} throughout
 * {{description}} : ...
 * {{git_url}} : https://github.com/elliotcondon/acf-field-type-template
 
-## step 2.
+### step 2.
 
 Edit this README.md file with the apropriate information and delete all content above and including this line!
 
