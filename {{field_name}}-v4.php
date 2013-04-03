@@ -250,13 +250,13 @@ class acf_field_{{field_name}} extends acf_field
 	*  @date	23/01/13
 	*
 	*  @param	$value - the value which will be saved in the database
-	*  @param	$field - the field array holding all the field options
 	*  @param	$post_id - the $post_id of which the value will be saved
+	*  @param	$field - the field array holding all the field options
 	*
 	*  @return	$value - the modified value
 	*/
 	
-	function update_value( $value, $field, $post_id )
+	function update_value( $value, $post_id, $field )
 	{
 		// Note: This function can be removed if not used
 		return $value;
