@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 
-class acf_field_location_plugin
+class acf_field_{{field_name}}_plugin
 {
 	/*
 	*  Construct
