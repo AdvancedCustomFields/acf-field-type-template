@@ -21,7 +21,7 @@ class acf_field_{{field_name}} extends acf_Field
     	
     	// set name / title
     	$this->name = '{{field_name}}';
-		$this->label = __('{{field_label}}');
+		$this->title = __('{{field_label}}');
 		$this->defaults = array(
 			// add default here to merge into your field. 
 			// This makes life easy when creating the field options as you don't need to use any if( isset('') ) logic. eg:
