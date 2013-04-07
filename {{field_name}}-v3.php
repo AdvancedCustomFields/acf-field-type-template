@@ -64,7 +64,7 @@ class acf_field_{{field_name}} extends acf_Field
 	<td>
 		<?php
 		
-		do_action('acf/create_field', array(
+		$this->parent->create_field(array(
 			'type'		=>	'radio',
 			'name'		=>	'fields['.$key.'][preview_size]',
 			'value'		=>	$field['preview_size'],
