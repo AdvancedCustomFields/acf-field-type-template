@@ -36,7 +36,7 @@ class acf_field_{{field_name}}_plugin
 
 		
 		// version 3-
-		add_action( 'init', array( $this, 'init' ));
+		add_action( 'init', array( $this, 'init' ), 5);
 	}
 	
 	
