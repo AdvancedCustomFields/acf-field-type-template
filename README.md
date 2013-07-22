@@ -5,9 +5,9 @@ This repository holds a starting kit to create a field type Add-on with these ab
 * works in ACF version 4
 * works in ACF version 3
 * works as a WP plugin
-* works as a themem include
+* works as a theme include
 
-For more information,please read the documentation here:
+For more information, please read the documentation here:
 http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-type/
 
 ### Structure
@@ -17,9 +17,9 @@ http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-typ
 * /js : folder for .js files
 * /lang : folder for .po and .mo files
 * acf-{{field_name}}.php : Main add-on file. This file acts as the WP plugin and includes the neccessary field file
-* {{field_name}}-v4.php : Field class compatible with ACF version 4 
+* {{field_name}}-v4.php : Field class compatible with ACF version 4
 * {{field_name}}-v3.php : Field class compatible with ACF version 3
-* readme.txt : WordPress readme file to be used by the wordpress repository if this addon is also uploaded to WP 
+* readme.txt : WordPress readme file to be used by the wordpress repository if this add-on is also uploaded to WP
 
 ### step 1.
 
@@ -41,7 +41,7 @@ This template uses moustache placeholders such as this {{field_name}} throughout
 
 ### step 2.
 
-Edit the {{field_name}}-v4.php and {{field_name}}-v3.php files (now renamed with your field name) and include your custom code in the apropriate functions. 
+Edit the {{field_name}}-v4.php and {{field_name}}-v3.php files (now renamed with your field name) and include your custom code in the apropriate functions.
 Please note that v3 and v4 field classes have slightly different functions. For more information, please read:
 * http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-type/
 * http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-type-v3/
@@ -68,7 +68,6 @@ This add-on will work with:
 
 * version 4 and up
 * version 3 and bellow
-
 
 ### Installation
 

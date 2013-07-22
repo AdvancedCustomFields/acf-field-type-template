@@ -1,6 +1,6 @@
 === Advanced Custom Fields: {{field_label}} Field ===
 Contributors: {{wp_user_name}}
-Tags: 
+Tags:
 Requires at least: 3.4
 Tested up to: 3.3.1
 Stable tag: trunk
