@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Advanced Custom Fields: {{field_name}}
+Plugin Name: Advanced Custom Fields: {{field_label}}
 Plugin URI: {{git_url}}
 Description: {{short_description}}
 Version: 1.0.0
