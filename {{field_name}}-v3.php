@@ -1,11 +1,9 @@
 <?php
 
 class acf_field_{{field_name}} extends acf_Field {
-
 	// vars
 	var $settings, // will hold info such as dir / path
 	    $defaults; // will hold default field options
-
 
 	/*--------------------------------------------------------------------------------------
 	*
@@ -17,9 +15,7 @@ class acf_field_{{field_name}} extends acf_Field {
 	*	@since 2.2.0
 	*
 	*-------------------------------------------------------------------------------------*/
-
 	function __construct( $parent ) {
-
 		// do not delete!
 		parent::__construct( $parent );
 
@@ -38,9 +34,7 @@ class acf_field_{{field_name}} extends acf_Field {
 			'dir' => $this->helpers_get_dir( __FILE__ ),
 			'version' => '1.0.0',
 		);
-
 	}
-
 
 	/*
 	*  helpers_get_path
@@ -49,11 +43,9 @@ class acf_field_{{field_name}} extends acf_Field {
 	*  @since: 3.6
 	*  @created: 30/01/13
 	*/
-
 	function helpers_get_path( $file ) {
 		return trailingslashit( dirname( $file ) );
 	}
-
 
 	/*
 	*  helpers_get_dir
@@ -62,27 +54,22 @@ class acf_field_{{field_name}} extends acf_Field {
 	*  @since: 3.6
 	*  @created: 30/01/13
 	*/
-
 	function helpers_get_dir( $file ) {
 		$dir = trailingslashit( dirname( $file ) );
 		$count = 0;
 
-
 		// sanitize for Win32 installs
 		$dir = str_replace( '\\', '/', $dir );
-
 
 		// if file is in plugins folder
 		$wp_plugin_dir = str_replace( '\\', '/', WP_PLUGIN_DIR );
 		$dir = str_replace( $wp_plugin_dir, WP_PLUGIN_URL, $dir, $count );
-
 
 		if ( $count < 1 ) {
 			// if file is in wp-content folder
 			$wp_content_dir = str_replace( '\\', '/', WP_CONTENT_DIR );
 			$dir = str_replace( $wp_content_dir, WP_CONTENT_URL, $dir, $count );
 		}
-
 
 		if ( $count < 1 ) {
 			// if file is in ??? folder
@@ -92,7 +79,6 @@ class acf_field_{{field_name}} extends acf_Field {
 
 		return $dir;
 	}
-
 
 	/*--------------------------------------------------------------------------------------
 	*
@@ -108,13 +94,11 @@ class acf_field_{{field_name}} extends acf_Field {
 	*	@since 2.2.0
 	*
 	*-------------------------------------------------------------------------------------*/
-
 	function create_options( $key, $field ) {
 		// defaults?
 		/*
 		$field = array_merge( $this->defaults, $field );
 		*/
-
 
 		// Create Field Options HTML
 		?>
@@ -143,7 +127,6 @@ class acf_field_{{field_name}} extends acf_Field {
 		<?php
 	}
 
-
 	/*--------------------------------------------------------------------------------------
 	*
 	*	pre_save_field
@@ -154,7 +137,6 @@ class acf_field_{{field_name}} extends acf_Field {
 	*	@since 2.2.0
 	*
 	*-------------------------------------------------------------------------------------*/
-
 	function pre_save_field( $field ) {
 		// Note: This function can be removed if not used
 
@@ -162,7 +144,6 @@ class acf_field_{{field_name}} extends acf_Field {
 
 		return parent::pre_save_field( $field );
 	}
-
 
 	/*--------------------------------------------------------------------------------------
 	*
@@ -173,7 +154,6 @@ class acf_field_{{field_name}} extends acf_Field {
 	*	@since 2.2.0
 	*
 	*-------------------------------------------------------------------------------------*/
-
 	function create_field( $field ) {
 		// defaults?
 		/*
@@ -182,7 +162,6 @@ class acf_field_{{field_name}} extends acf_Field {
 
 		// perhaps use $field['preview_size'] to alter the markup?
 
-
 		// create Field HTML
 		?>
 		<div>
@@ -190,7 +169,6 @@ class acf_field_{{field_name}} extends acf_Field {
 		</div>
 		<?php
 	}
-
 
 	/*--------------------------------------------------------------------------------------
 	*
@@ -203,11 +181,9 @@ class acf_field_{{field_name}} extends acf_Field {
 	*	@since 2.2.0
 	*
 	*-------------------------------------------------------------------------------------*/
-
 	function admin_head() {
 		// Note: This function can be removed if not used
 	}
-
 
 	/*--------------------------------------------------------------------------------------
 	*
@@ -220,10 +196,8 @@ class acf_field_{{field_name}} extends acf_Field {
 	*	@since 3.0.0
 	*
 	*-------------------------------------------------------------------------------------*/
-
 	function admin_print_scripts() {
 		// Note: This function can be removed if not used
-
 
 		// register ACF scripts
 		wp_register_script( 'acf-input-{{field_name}}', $this->settings['dir'] . 'js/input.js', array( 'acf-input' ), $this->settings['version'] );
@@ -232,13 +206,10 @@ class acf_field_{{field_name}} extends acf_Field {
 		wp_enqueue_script( array(
 			'acf-input-{{field_name}}',
 		) );
-
-
 	}
 
 	function admin_print_styles() {
 		// Note: This function can be removed if not used
-
 
 		wp_register_style( 'acf-input-{{field_name}}', $this->settings['dir'] . 'css/input.css', array( 'acf-input' ), $this->settings['version'] );
 
@@ -247,7 +218,6 @@ class acf_field_{{field_name}} extends acf_Field {
 			'acf-input-{{field_name}}',
 		) );
 	}
-
 
 	/*--------------------------------------------------------------------------------------
 	*
@@ -265,7 +235,6 @@ class acf_field_{{field_name}} extends acf_Field {
 	*	@since 2.2.0
 	*
 	*-------------------------------------------------------------------------------------*/
-
 	function update_value( $post_id, $field, $value ) {
 		// Note: This function can be removed if not used
 
@@ -274,7 +243,6 @@ class acf_field_{{field_name}} extends acf_Field {
 		// save value
 		parent::update_value( $post_id, $field, $value );
 	}
-
 
 	/*--------------------------------------------------------------------------------------
 	*
@@ -290,7 +258,6 @@ class acf_field_{{field_name}} extends acf_Field {
 	*	@since 2.2.0
 	*
 	*-------------------------------------------------------------------------------------*/
-
 	function get_value( $post_id, $field ) {
 		// Note: This function can be removed if not used
 
@@ -302,7 +269,6 @@ class acf_field_{{field_name}} extends acf_Field {
 		// return value
 		return $value;
 	}
-
 
 	/*--------------------------------------------------------------------------------------
 	*
@@ -318,7 +284,6 @@ class acf_field_{{field_name}} extends acf_Field {
 	*	@since 3.0.0
 	*
 	*-------------------------------------------------------------------------------------*/
-
 	function get_value_for_api( $post_id, $field ) {
 		// Note: This function can be removed if not used
 
@@ -329,7 +294,5 @@ class acf_field_{{field_name}} extends acf_Field {
 
 		// return value
 		return $value;
-
 	}
-
 }

@@ -1,6 +1,5 @@
 (function ( $ ) {
 
-
 	/*
 	*  acf/setup_fields
 	*
