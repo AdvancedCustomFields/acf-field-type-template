@@ -12,14 +12,14 @@ http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-typ
 
 ### Structure
 
-* /css : folder for .css files.
-* /images : folder for image files.
-* /js : folder for .js files.
-* /lang : folder for .po and .mo files.
-* acf-{{field_name}}.php : Main add-on file. This file acts as the WP plugin and includes the neccessary field file.
-* {{field_name}}-v4.php : Field class compatible with ACF version 4.
-* {{field_name}}-v3.php : Field class compatible with ACF version 3.
-* readme.txt : WordPress readme file to be used by the wordpress repository if this add-on is also uploaded to WP.
+* `/css`: folder for .css files.
+* `/images`: folder for image files.
+* `/js`: folder for .js files.
+* `/lang`: folder for .po and .mo files.
+* `acf-{{field_name}}.php`: Main add-on file. This file acts as the WP plugin and includes the neccessary field file.
+* `{{field_name}}-v4.php`: Field class compatible with ACF version 4.
+* `{{field_name}}-v3.php`: Field class compatible with ACF version 3.
+* `readme.txt`: WordPress readme file to be used by the wordpress repository if this add-on is also uploaded to WP.
 
 ### Step 1.
 
