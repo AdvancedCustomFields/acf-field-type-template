@@ -18,7 +18,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This add-on will work with:
 
 * version 4 and up
-* version 3 and bellow
+* version 3 and below
 
 == Installation ==
 

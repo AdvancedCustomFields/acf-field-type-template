@@ -107,7 +107,7 @@ class acf_field_{{field_name}} extends acf_Field
 	*	for your field
 	*
 	*	@params
-	*	- $key (int) - the $_POST obejct key required to save the options to the field
+	*	- $key (int) - the $_POST object key required to save the options to the field
 	*	- $field (array) - the field object
 	*
 	*	@author Elliot Condon
@@ -154,8 +154,8 @@ class acf_field_{{field_name}} extends acf_Field
 	/*--------------------------------------------------------------------------------------
 	*
 	*	pre_save_field
-	*	- this function is called when saving your acf object. Here you can manipulate the
-	*	field object and it's options before it gets saved to the database.
+	*	- this function is called when saving your ACF object. Here you can manipulate the
+	*	field object and its options before it gets saved to the database.
 	*
 	*	@author Elliot Condon
 	*	@since 2.2.0
@@ -175,7 +175,7 @@ class acf_field_{{field_name}} extends acf_Field
 	/*--------------------------------------------------------------------------------------
 	*
 	*	create_field
-	*	- this function is called on edit screens to produce the html for this field
+	*	- this function is called on edit screens to produce the HTML for this field
 	*
 	*	@author Elliot Condon
 	*	@since 2.2.0
@@ -205,7 +205,7 @@ class acf_field_{{field_name}} extends acf_Field
 	*
 	*	admin_head
 	*	- this function is called in the admin_head of the edit screen where your field
-	*	is created. Use this function to create css and javascript to assist your
+	*	is created. Use this function to create CSS and JavaScript to assist your
 	*	create_field() function.
 	*
 	*	@author Elliot Condon
@@ -223,7 +223,7 @@ class acf_field_{{field_name}} extends acf_Field
 	*
 	*	admin_print_scripts / admin_print_styles
 	*	- this function is called in the admin_print_scripts / admin_print_styles where
-	*	your field is created. Use this function to register css and javascript to assist
+	*	your field is created. Use this function to register CSS and JavaScript to assist
 	*	your create_field() function.
 	*
 	*	@author Elliot Condon
@@ -236,7 +236,7 @@ class acf_field_{{field_name}} extends acf_Field
 		// Note: This function can be removed if not used
 
 
-		// register acf scripts
+		// register ACF scripts
 		wp_register_script('acf-input-{{field_name}}', $this->settings['dir'] . 'js/input.js', array('acf-input'), $this->settings['version']);
 
 		// scripts
@@ -268,9 +268,9 @@ class acf_field_{{field_name}} extends acf_Field
 	*	the function will pass through the 3 parameters for you to use.
 	*
 	*	@params
-	*	- $post_id (int) - usefull if you need to save extra data or manipulate the current
+	*	- $post_id (int) - useful if you need to save extra data or manipulate the current
 	*	post object
-	*	- $field (array) - usefull if you need to manipulate the $value based on a field option
+	*	- $field (array) - useful if you need to manipulate the $value based on a field option
 	*	- $value (mixed) - the new value of your field.
 	*
 	*	@author Elliot Condon
