@@ -84,7 +84,7 @@ This add-on can be treated as both a WP plugin and a theme include.
 2.	Edit your functions.php file and add the code below (Make sure the path is correct to include the acf-{{field_name}}.php file)
 
 ```php
-include_once('acf-{{field_name}}/acf-{{field_name}}.php');
+include_once( 'acf-{{field_name}}/acf-{{field_name}}.php' );
 ```
 
 ### More Information

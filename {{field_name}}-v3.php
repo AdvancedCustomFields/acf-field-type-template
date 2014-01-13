@@ -1,11 +1,10 @@
 <?php
 
-class acf_field_{{field_name}} extends acf_Field
-{
+class acf_field_{{field_name}} extends acf_Field {
 
 	// vars
 	var $settings, // will hold info such as dir / path
-		$defaults; // will hold default field options
+			$defaults; // will hold default field options
 
 
 	/*--------------------------------------------------------------------------------------
@@ -19,85 +18,80 @@ class acf_field_{{field_name}} extends acf_Field
 	*
 	*-------------------------------------------------------------------------------------*/
 
-	function __construct($parent)
-	{
+	function __construct( $parent ) {
 
 		// do not delete!
-  	parent::__construct($parent);
+		parent::__construct( $parent );
 
-  	// set name / title
-  	$this->name = '{{field_name}}';
-	  $this->title = __('{{field_label}}');
-	  $this->defaults = array(
-		  // add default here to merge into your field.
-		  // This makes life easy when creating the field options as you don't need to use any if( isset('') ) logic. eg:
-		  //'preview_size' => 'thumbnail'
-	  );
+		// set name / title
+		$this->name = '{{field_name}}';
+		$this->title = __( '{{field_label}}' );
+		$this->defaults = array(
+			// add default here to merge into your field.
+			// This makes life easy when creating the field options as you don't need to use any if ( isset( '' ) ) logic. eg:
+			//'preview_size' => 'thumbnail',
+		);
 
 		// settings
 		$this->settings = array(
-			'path' => $this->helpers_get_path(__FILE__),
-			'dir' => $this->helpers_get_dir(__FILE__),
-			'version' => '1.0.0'
+			'path' => $this->helpers_get_path( __FILE__ ),
+			'dir' => $this->helpers_get_dir( __FILE__ ),
+			'version' => '1.0.0',
 		);
 
-  }
+	}
 
 
- 	/*
-  *  helpers_get_path
-  *
-  *  @description: calculates the path (works for plugin / theme folders)
-  *  @since: 3.6
-  *  @created: 30/01/13
-  */
+	/*
+	*  helpers_get_path
+	*
+	*  @description: calculates the path (works for plugin / theme folders)
+	*  @since: 3.6
+	*  @created: 30/01/13
+	*/
 
-  function helpers_get_path($file)
-  {
-    return trailingslashit(dirname($file));
-  }
-
-
-  /*
-  *  helpers_get_dir
-  *
-  *  @description: calculates the directory (works for plugin / theme folders)
-  *  @since: 3.6
-  *  @created: 30/01/13
-  */
-
-  function helpers_get_dir($file)
-  {
-    $dir = trailingslashit(dirname($file));
-    $count = 0;
+	function helpers_get_path( $file ) {
+		return trailingslashit( dirname( $file ) );
+	}
 
 
-    // sanitize for Win32 installs
-    $dir = str_replace('\\', '/', $dir);
+	/*
+	*  helpers_get_dir
+	*
+	*  @description: calculates the directory (works for plugin / theme folders)
+	*  @since: 3.6
+	*  @created: 30/01/13
+	*/
+
+	function helpers_get_dir( $file ) {
+		$dir = trailingslashit( dirname( $file ) );
+		$count = 0;
 
 
-    // if file is in plugins folder
-    $wp_plugin_dir = str_replace('\\', '/', WP_PLUGIN_DIR);
-    $dir = str_replace($wp_plugin_dir, WP_PLUGIN_URL, $dir, $count);
+		// sanitize for Win32 installs
+		$dir = str_replace( '\\', '/', $dir );
 
 
-    if($count < 1)
-    {
-      // if file is in wp-content folder
-      $wp_content_dir = str_replace('\\', '/', WP_CONTENT_DIR);
-      $dir = str_replace($wp_content_dir, WP_CONTENT_URL, $dir, $count);
-    }
+		// if file is in plugins folder
+		$wp_plugin_dir = str_replace( '\\', '/', WP_PLUGIN_DIR );
+		$dir = str_replace( $wp_plugin_dir, WP_PLUGIN_URL, $dir, $count );
 
 
-    if($count < 1)
-    {
-      // if file is in ??? folder
-      $wp_dir = str_replace('\\', '/', ABSPATH);
-      $dir = str_replace($wp_dir, site_url('/'), $dir);
-    }
+		if ( $count < 1 ) {
+			// if file is in wp-content folder
+			$wp_content_dir = str_replace( '\\', '/', WP_CONTENT_DIR );
+			$dir = str_replace( $wp_content_dir, WP_CONTENT_URL, $dir, $count );
+		}
 
-    return $dir;
-  }
+
+		if ( $count < 1 ) {
+			// if file is in ??? folder
+			$wp_dir = str_replace( '\\', '/', ABSPATH );
+			$dir = str_replace( $wp_dir, site_url( '/' ), $dir );
+		}
+
+		return $dir;
+	}
 
 
 	/*--------------------------------------------------------------------------------------
@@ -115,11 +109,10 @@ class acf_field_{{field_name}} extends acf_Field
 	*
 	*-------------------------------------------------------------------------------------*/
 
-	function create_options($key, $field)
-	{
+	function create_options( $key, $field ) {
 		// defaults?
 		/*
-		$field = array_merge($this->defaults, $field);
+		$field = array_merge( $this->defaults, $field );
 		*/
 
 
@@ -127,22 +120,22 @@ class acf_field_{{field_name}} extends acf_Field
 		?>
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
-		<label><?php _e("Preview Size", 'acf'); ?></label>
-		<p class="description"><?php _e("Thumbnail is advised", 'acf'); ?></p>
+		<label><?php _e( 'Preview Size', 'acf' ); ?></label>
+		<p class="description"><?php _e( 'Thumbnail is advised', 'acf' ); ?></p>
 	</td>
 	<td>
 		<?php
 
-		$this->parent->create_field(array(
-			'type'    =>	'radio',
-			'name'    =>	'fields[' . $key . '][preview_size]',
+		$this->parent->create_field( array(
+			'type'    => 'radio',
+			'name'    => 'fields[' . $key . '][preview_size]',
 			'value'	  => $field['preview_size'],
 			'layout'  => 'horizontal',
-			'choices'	=> array(
-				'thumbnail' => __('Thumbnail'),
-				'something_else' => __('Something Else'),
+			'choices' => array(
+				'thumbnail' => __( 'Thumbnail' ),
+				'something_else' => __( 'Something Else' ),
 			)
-		));
+		) );
 
 		?>
 	</td>
@@ -162,13 +155,12 @@ class acf_field_{{field_name}} extends acf_Field
 	*
 	*-------------------------------------------------------------------------------------*/
 
-	function pre_save_field($field)
-	{
+	function pre_save_field( $field ) {
 		// Note: This function can be removed if not used
 
 		// do stuff with field (mostly format options data)
 
-		return parent::pre_save_field($field);
+		return parent::pre_save_field( $field );
 	}
 
 
@@ -182,11 +174,10 @@ class acf_field_{{field_name}} extends acf_Field
 	*
 	*-------------------------------------------------------------------------------------*/
 
-	function create_field($field)
-	{
+	function create_field( $field ) {
 		// defaults?
 		/*
-		$field = array_merge($this->defaults, $field);
+		$field = array_merge( $this->defaults, $field );
 		*/
 
 		// perhaps use $field['preview_size'] to alter the markup?
@@ -213,8 +204,7 @@ class acf_field_{{field_name}} extends acf_Field
 	*
 	*-------------------------------------------------------------------------------------*/
 
-	function admin_head()
-	{
+	function admin_head() {
 		// Note: This function can be removed if not used
 	}
 
@@ -231,33 +221,31 @@ class acf_field_{{field_name}} extends acf_Field
 	*
 	*-------------------------------------------------------------------------------------*/
 
-	function admin_print_scripts()
-	{
+	function admin_print_scripts() {
 		// Note: This function can be removed if not used
 
 
 		// register ACF scripts
-		wp_register_script('acf-input-{{field_name}}', $this->settings['dir'] . 'js/input.js', array('acf-input'), $this->settings['version']);
+		wp_register_script( 'acf-input-{{field_name}}', $this->settings['dir'] . 'js/input.js', array( 'acf-input' ), $this->settings['version'] );
 
 		// scripts
-		wp_enqueue_script(array(
+		wp_enqueue_script( array(
 			'acf-input-{{field_name}}',
-		));
+		) );
 
 
 	}
 
-	function admin_print_styles()
-	{
+	function admin_print_styles() {
 		// Note: This function can be removed if not used
 
 
-		wp_register_style('acf-input-{{field_name}}', $this->settings['dir'] . 'css/input.css', array('acf-input'), $this->settings['version']);
+		wp_register_style( 'acf-input-{{field_name}}', $this->settings['dir'] . 'css/input.css', array( 'acf-input' ), $this->settings['version'] );
 
 		// styles
-		wp_enqueue_style(array(
+		wp_enqueue_style( array(
 			'acf-input-{{field_name}}',
-		));
+		) );
 	}
 
 
@@ -278,14 +266,13 @@ class acf_field_{{field_name}} extends acf_Field
 	*
 	*-------------------------------------------------------------------------------------*/
 
-	function update_value($post_id, $field, $value)
-	{
+	function update_value( $post_id, $field, $value ) {
 		// Note: This function can be removed if not used
 
 		// do stuff with value
 
 		// save value
-		parent::update_value($post_id, $field, $value);
+		parent::update_value( $post_id, $field, $value );
 	}
 
 
@@ -304,12 +291,11 @@ class acf_field_{{field_name}} extends acf_Field
 	*
 	*-------------------------------------------------------------------------------------*/
 
-	function get_value($post_id, $field)
-	{
+	function get_value( $post_id, $field ) {
 		// Note: This function can be removed if not used
 
 		// get value
-		$value = parent::get_value($post_id, $field);
+		$value = parent::get_value( $post_id, $field );
 
 		// format value
 
@@ -333,12 +319,11 @@ class acf_field_{{field_name}} extends acf_Field
 	*
 	*-------------------------------------------------------------------------------------*/
 
-	function get_value_for_api($post_id, $field)
-	{
+	function get_value_for_api( $post_id, $field ) {
 		// Note: This function can be removed if not used
 
 		// get value
-		$value = $this->get_value($post_id, $field);
+		$value = $this->get_value( $post_id, $field );
 
 		// format value
 
@@ -348,5 +333,3 @@ class acf_field_{{field_name}} extends acf_Field
 	}
 
 }
-
-?>
