@@ -18,7 +18,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This add-on will work with:
 
 * version 4 and up
-* version 3 and bellow
+* version 3 and below
 
 == Installation ==
 
@@ -33,11 +33,10 @@ This add-on can be treated as both a WP plugin and a theme include.
 2.	Edit your functions.php file and add the code below (Make sure the path is correct to include the acf-{{field_name}}.php file)
 
 `
-add_action('acf/register_fields', 'my_register_fields');
+add_action( 'acf/register_fields', 'my_register_fields' );
 
-function my_register_fields()
-{
-	include_once('acf-{{field_name}}/acf-{{field_name}}.php');
+function my_register_fields() {
+	include_once( 'acf-{{field_name}}/acf-{{field_name}}.php' );
 }
 `
 
