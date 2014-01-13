@@ -1,10 +1,10 @@
-(function($){
-	
-	
+(function ( $ ) {
+
+
 	/*
 	*  acf/setup_fields
 	*
-	*  This event is triggered when ACF adds any new elements to the DOM. 
+	*  This event is triggered when ACF adds any new elements to the DOM.
 	*
 	*  @type	function
 	*  @since	1.0.0
@@ -15,16 +15,16 @@
 	*
 	*  @return	N/A
 	*/
-	
-	$(document).live('acf/setup_fields', function(e, postbox){
-		
-		$(postbox).find('.my-field-class').each(function(){
-			
-			// initiate JS on my field!
-			// $(this).add_awesome_stuff();
-			
-		});
-	
-	});
 
-})(jQuery);
+	$( document ).live( 'acf/setup_fields', function ( e, postbox ) {
+
+		$( postbox ).find( '.my-field-class' ).each( function () {
+
+			// initiate JS on my field!
+			// $( this ).add_awesome_stuff();
+
+		} );
+
+	} );
+
+} ) ( jQuery );
