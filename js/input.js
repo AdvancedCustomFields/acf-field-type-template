@@ -5,12 +5,11 @@
 	*
 	*  This event is triggered when ACF adds any new elements to the DOM.
 	*
-	*  @type	function
-	*  @since	1.0.0
-	*  @date	01/01/12
+	*  @type  function
+	*  @since 1.0.0
 	*
-	*  @param	event		e: an event object. This can be ignored
-	*  @param	Element		postbox: An element which contains the new HTML
+	*  @param e An event object. This can be ignored.
+	*  @param postbox An element which contains the new HTML.
 	*
 	*  @return	N/A
 	*/
@@ -19,7 +18,7 @@
 
 		$( postbox ).find( '.my-field-class' ).each( function () {
 
-			// initiate JS on my field!
+			// Initiate JS on my field!
 			// $( this ).add_awesome_stuff();
 
 		} );
