@@ -12,7 +12,7 @@ http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-typ
 * `/images`: folder for image files
 * `/js`: folder for .js files
 * `/lang`: folder for .pot, .po and .mo files
-* `acf-FIELD_NAME.php`: Main plugin filethat includes the correct field file based on the ACF version
+* `acf-FIELD_NAME.php`: Main plugin file that includes the correct field file based on the ACF version
 * `FIELD_NAME-v5.php`: Field class compatible with ACF version 5 
 * `FIELD_NAME-v4.php`: Field class compatible with ACF version 4
 * `readme.txt`: WordPress readme file to be used by the wordpress repository
@@ -32,13 +32,13 @@ This template uses `PLACEHOLDERS` such as `FIELD_NAME` throughout the file names
 
 ### step 2.
 
-Edit the `FIELD_NAME-v5.php` and `FIELD_NAME-v4.php` files (now renamed using your field name) and include your custom code in the apropriate functions. 
+Edit the `FIELD_NAME-v5.php` and `FIELD_NAME-v4.php` files (now renamed using your field name) and include your custom code in the appropriate functions. 
 Please note that v4 and v5 field classes have slightly different functions. For more information, please read:
 * http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-type/
 
 ### step 3.
 
-Edit this `README.md` file with the apropriate information and delete all content above and including the following line.
+Edit this `README.md` file with the appropriate information and delete all content above and including the following line.
 
 -----------------------
 
