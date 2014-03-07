@@ -302,7 +302,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	/*
 	*  load_value()
 	*
-	*  This filter is appied to the $value after it is loaded from the db
+	*  This filter is applied to the $value after it is loaded from the db
 	*
 	*  @type	filter
 	*  @since	3.6
@@ -328,7 +328,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	/*
 	*  update_value()
 	*
-	*  This filter is appied to the $value before it is saved in the db
+	*  This filter is applied to the $value before it is saved in the db
 	*
 	*  @type	filter
 	*  @since	3.6
@@ -354,7 +354,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	/*
 	*  format_value()
 	*
-	*  This filter is appied to the $value after it is loaded from the db and before it is passed to the render_field() function
+	*  This filter is applied to the $value after it is loaded from the db and before it is passed to the render_field() function
 	*
 	*  @type	filter
 	*  @since	3.6
@@ -456,7 +456,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	/*
 	*  load_field()
 	*
-	*  This filter is appied to the $field after it is loaded from the database
+	*  This filter is applied to the $field after it is loaded from the database
 	*
 	*  @type	filter
 	*  @date	23/01/2013
@@ -480,7 +480,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	/*
 	*  update_field()
 	*
-	*  This filter is appied to the $field before it is saved to the database
+	*  This filter is applied to the $field before it is saved to the database
 	*
 	*  @type	filter
 	*  @date	23/01/2013
