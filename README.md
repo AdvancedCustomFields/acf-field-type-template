@@ -42,7 +42,7 @@ Edit this `README.md` file with the apropriate information and delete all conten
 
 -----------------------
 
-# Advanced Custom Fields: FIELD_LABEL Field
+# ACF FIELD_LABEL Field
 
 DESCRIPTION
 
