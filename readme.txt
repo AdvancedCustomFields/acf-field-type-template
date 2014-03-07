@@ -1,47 +1,32 @@
-=== Advanced Custom Fields: {{field_label}} Field ===
-Contributors: {{wp_user_name}}
-Tags:
-Requires at least: 3.4
-Tested up to: 3.3.1
+=== Advanced Custom Fields: FIELD_LABEL Field ===
+Contributors: AUTHOR_NAME
+Tags: PLUGIN_TAGS
+Requires at least: 3.5
+Tested up to: 3.8.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-{{short_description}}
+DESCRIPTION
 
 == Description ==
 
-{{description}}
+EXTENDED_DESCRIPTION
 
 = Compatibility =
 
-This add-on will work with:
-
-* version 4 and up
-* version 3 and bellow
+This ACF field type is compatible with:
+* ACF 5
+* ACF 4
 
 == Installation ==
 
-This add-on can be treated as both a WP plugin and a theme include.
-
-= Plugin =
-1. Copy the 'acf-{{field_name}}' folder into your plugins folder
-2. Activate the plugin via the Plugins admin page
-
-= Include =
-1.	Copy the 'acf-{{field_name}}' folder into your theme folder (can use sub folders). You can place the folder anywhere inside the 'wp-content' directory
-2.	Edit your functions.php file and add the code below (Make sure the path is correct to include the acf-{{field_name}}.php file)
-
-`
-add_action('acf/register_fields', 'my_register_fields');
-
-function my_register_fields()
-{
-	include_once('acf-{{field_name}}/acf-{{field_name}}.php');
-}
-`
+1. Copy the `acf-FIELD_NAME` folder into your `wp-content/plugins` folder
+2. Activate the FIELD_LABEL plugin via the plugins admin page
+3. Create a new field via ACF and select the FIELD_LABEL type
+4. Please refer to the description for more info regarding the field type settings
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial Release.

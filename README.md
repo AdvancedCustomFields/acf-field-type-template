@@ -1,92 +1,69 @@
-# ACF { Field Type Template
+# ACF Field Type Template
 
-Welcome to the repository for Advanced Custom Fields Field Type Template.
-This repository holds a starting kit to create a field type Add-on with these abilities:
-* works in ACF version 4
-* works in ACF version 3
-* works as a WP plugin
-* works as a theme include
+Welcome to the Advanced Custom Fields field type template repository.
+Here you will find a starter-kit for creating a new ACF field type. This start-kit will work as a normal WP plugin.
 
-For more information, please read the documentation here:
+For more information about creating a new field type, please read the following article:
 http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-type/
 
 ### Structure
 
-* /css :  folder for .css files.
-* /images : folder for image files
-* /js : folder for .js files
-* /lang : folder for .po and .mo files
-* acf-{{field_name}}.php : Main add-on file. This file acts as the WP plugin and includes the neccessary field file
-* {{field_name}}-v4.php : Field class compatible with ACF version 4
-* {{field_name}}-v3.php : Field class compatible with ACF version 3
-* readme.txt : WordPress readme file to be used by the wordpress repository if this add-on is also uploaded to WP
+* `/css`:  folder for .css files.
+* `/images`: folder for image files
+* `/js`: folder for .js files
+* `/lang`: folder for .pot, .po and .mo files
+* `acf-FIELD_NAME.php`: Main plugin filethat includes the correct field file based on the ACF version
+* `FIELD_NAME-v5.php`: Field class compatible with ACF version 5 
+* `FIELD_NAME-v4.php`: Field class compatible with ACF version 4
+* `readme.txt`: WordPress readme file to be used by the wordpress repository
 
 ### step 1.
 
-This template uses moustache placeholders such as this {{field_name}} throughout the file names and code. Use the list of placeholders below to do a 'find and replace'. The list below shows an example for a field called 'Google Maps'
+This template uses `PLACEHOLDERS` such as `FIELD_NAME` throughout the file names and code. Use the following list of placeholders to do a 'find and replace':
 
-**General**
-
-* {{field_name}} : google_maps (used for class & file names so please use '_' instead of '-')
-* {{field_label}} : Google Maps
-
-**Readme**
-
-* {{wp_user_name}} : elliotcondon
-* {{full_name}} : Elliot Condon
-* {{website}} : http://www.elliotcondon.com
-* {{short_description}} : ...
-* {{description}} : ...
-* {{git_url}} : https://github.com/elliotcondon/acf-field-type-template
+* `FIELD_NAME`: Single word, no spaces. Underscores allowed. eg. donate_button
+* `FIELD_LABEL`: Multiple words, can include spaces, visible when selecting a field type. eg. Donate Button
+* `PLUGIN_URL`: Url to the github or WordPress repository
+* `PLUGIN_TAGS`: Comma seperated list of relevant tags
+* `DESCRIPTION`: Brief description of the field type, no longer than 2 lines
+* `EXTENDED_DESCRIPTION`: Extended description of the field type
+* `AUTHOR_NAME`: Name of field type author
+* `AUTHOR_URL`: URL to author's website
 
 ### step 2.
 
-Edit the {{field_name}}-v4.php and {{field_name}}-v3.php files (now renamed with your field name) and include your custom code in the apropriate functions.
-Please note that v3 and v4 field classes have slightly different functions. For more information, please read:
+Edit the `FIELD_NAME-v5.php` and `FIELD_NAME-v4.php` files (now renamed using your field name) and include your custom code in the apropriate functions. 
+Please note that v4 and v5 field classes have slightly different functions. For more information, please read:
 * http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-type/
-* http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-type-v3/
 
 ### step 3.
 
-Edit this README.md file with the apropriate information and delete all content above and including the following line!
+Edit this `README.md` file with the apropriate information and delete all content above and including the following line.
 
 -----------------------
 
-# ACF { {{field_label}} Field
+# Advanced Custom Fields: FIELD_LABEL Field
 
-Adds a '{{field_label}}' field type for the [Advanced Custom Fields](http://wordpress.org/extend/plugins/advanced-custom-fields/) WordPress plugin.
+DESCRIPTION
 
 -----------------------
 
-### Overview
+### Description
 
-{{description}}
+EXTENDED_DESCRIPTION
 
 ### Compatibility
 
-This add-on will work with:
-
-* version 4 and up
-* version 3 and bellow
+This ACF field type is compatible with:
+* ACF 5
+* ACF 4
 
 ### Installation
 
-This add-on can be treated as both a WP plugin and a theme include.
+1. Copy the `acf-FIELD_NAME` folder into your `wp-content/plugins` folder
+2. Activate the FIELD_LABEL plugin via the plugins admin page
+3. Create a new field via ACF and select the FIELD_LABEL type
+4. Please refer to the description for more info regarding the field type settings
 
-**Install as Plugin**
-
-1. Copy the 'acf-{{field_name}}' folder into your plugins folder
-2. Activate the plugin via the Plugins admin page
-
-**Include within theme**
-
-1.	Copy the 'acf-{{field_name}}' folder into your theme folder (can use sub folders). You can place the folder anywhere inside the 'wp-content' directory
-2.	Edit your functions.php file and add the code below (Make sure the path is correct to include the acf-{{field_name}}.php file)
-
-```php
-include_once('acf-{{field_name}}/acf-{{field_name}}.php');
-```
-
-### More Information
-
-Please read the readme.txt file for more information
+### Changelog
+Please see `readme.txt` for changelog

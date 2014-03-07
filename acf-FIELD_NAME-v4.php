@@ -1,12 +1,12 @@
 <?php
 
-class acf_field_{{field_name}} extends acf_field
-{
+class acf_field_FIELD_NAME extends acf_field {
+	
 	// vars
 	var $settings, // will hold info such as dir / path
 		$defaults; // will hold default field options
-
-
+		
+		
 	/*
 	*  __construct
 	*
@@ -15,25 +15,25 @@ class acf_field_{{field_name}} extends acf_field
 	*  @since	3.6
 	*  @date	23/01/13
 	*/
-
+	
 	function __construct()
 	{
 		// vars
-		$this->name = '{{field_name}}';
-		$this->label = __('{{field_label}}');
+		$this->name = 'FIELD_NAME';
+		$this->label = __('FIELD_LABEL');
 		$this->category = __("Basic",'acf'); // Basic, Content, Choice, etc
 		$this->defaults = array(
-			// add default here to merge into your field.
+			// add default here to merge into your field. 
 			// This makes life easy when creating the field options as you don't need to use any if( isset('') ) logic. eg:
 			//'preview_size' => 'thumbnail'
 		);
-
-
+		
+		
 		// do not delete!
-    parent::__construct();
-
-
-    // settings
+    	parent::__construct();
+    	
+    	
+    	// settings
 		$this->settings = array(
 			'path' => apply_filters('acf/helpers/get_path', __FILE__),
 			'dir' => apply_filters('acf/helpers/get_dir', __FILE__),
@@ -41,8 +41,8 @@ class acf_field_{{field_name}} extends acf_field
 		);
 
 	}
-
-
+	
+	
 	/*
 	*  create_options()
 	*
@@ -55,47 +55,47 @@ class acf_field_{{field_name}} extends acf_field
 	*
 	*  @param	$field	- an array holding all the field's data
 	*/
-
-	function create_options($field)
+	
+	function create_options( $field )
 	{
 		// defaults?
 		/*
 		$field = array_merge($this->defaults, $field);
 		*/
-
+		
 		// key is needed in the field names to correctly save the data
 		$key = $field['name'];
-
-
+		
+		
 		// Create Field Options HTML
 		?>
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
-		<label><?php _e("Preview Size", 'acf'); ?></label>
-		<p class="description"><?php _e("Thumbnail is advised", 'acf'); ?></p>
+		<label><?php _e("Preview Size",'acf'); ?></label>
+		<p class="description"><?php _e("Thumbnail is advised",'acf'); ?></p>
 	</td>
 	<td>
 		<?php
-
+		
 		do_action('acf/create_field', array(
-			'type'    =>  'radio',
-			'name'    =>  'fields[' . $key . '][preview_size]',
-			'value'   =>  $field['preview_size'],
-			'layout'  =>  'horizontal',
-			'choices' =>  array(
+			'type'		=>	'radio',
+			'name'		=>	'fields['.$key.'][preview_size]',
+			'value'		=>	$field['preview_size'],
+			'layout'	=>	'horizontal',
+			'choices'	=>	array(
 				'thumbnail' => __('Thumbnail'),
 				'something_else' => __('Something Else'),
 			)
 		));
-
+		
 		?>
 	</td>
 </tr>
 		<?php
-
+		
 	}
-
-
+	
+	
 	/*
 	*  create_field()
 	*
@@ -107,26 +107,26 @@ class acf_field_{{field_name}} extends acf_field
 	*  @since	3.6
 	*  @date	23/01/13
 	*/
-
+	
 	function create_field( $field )
 	{
 		// defaults?
 		/*
 		$field = array_merge($this->defaults, $field);
 		*/
-
+		
 		// perhaps use $field['preview_size'] to alter the markup?
-
-
+		
+		
 		// create Field HTML
 		?>
 		<div>
-
+			
 		</div>
 		<?php
 	}
-
-
+	
+	
 	/*
 	*  input_admin_enqueue_scripts()
 	*
@@ -142,26 +142,27 @@ class acf_field_{{field_name}} extends acf_field
 	function input_admin_enqueue_scripts()
 	{
 		// Note: This function can be removed if not used
-
-
+		
+		
 		// register acf scripts
-		wp_register_script('acf-input-{{field_name}}', $this->settings['dir'] . 'js/input.js', array('acf-input'), $this->settings['version']);
-		wp_register_style('acf-input-{{field_name}}', $this->settings['dir'] . 'css/input.css', array('acf-input'), $this->settings['version']);
-
-
+		wp_register_script( 'acf-input-FIELD_NAME', $this->settings['dir'] . 'js/input.js', array('acf-input'), $this->settings['version'] );
+		wp_register_style( 'acf-input-FIELD_NAME', $this->settings['dir'] . 'css/input.css', array('acf-input'), $this->settings['version'] ); 
+		
+		
 		// scripts
 		wp_enqueue_script(array(
-			'acf-input-{{field_name}}',
+			'acf-input-FIELD_NAME',	
 		));
 
 		// styles
 		wp_enqueue_style(array(
-			'acf-input-{{field_name}}',
+			'acf-input-FIELD_NAME',	
 		));
-
+		
+		
 	}
-
-
+	
+	
 	/*
 	*  input_admin_head()
 	*
@@ -178,8 +179,8 @@ class acf_field_{{field_name}} extends acf_field
 	{
 		// Note: This function can be removed if not used
 	}
-
-
+	
+	
 	/*
 	*  field_group_admin_enqueue_scripts()
 	*
@@ -197,7 +198,7 @@ class acf_field_{{field_name}} extends acf_field
 		// Note: This function can be removed if not used
 	}
 
-
+	
 	/*
 	*  field_group_admin_head()
 	*
@@ -231,14 +232,14 @@ class acf_field_{{field_name}} extends acf_field
 	*
 	*  @return	$value - the value to be saved in te database
 	*/
-
-	function load_value($value, $post_id, $field)
+	
+	function load_value( $value, $post_id, $field )
 	{
 		// Note: This function can be removed if not used
 		return $value;
 	}
-
-
+	
+	
 	/*
 	*  update_value()
 	*
@@ -254,14 +255,14 @@ class acf_field_{{field_name}} extends acf_field
 	*
 	*  @return	$value - the modified value
 	*/
-
-	function update_value($value, $post_id, $field)
+	
+	function update_value( $value, $post_id, $field )
 	{
 		// Note: This function can be removed if not used
 		return $value;
 	}
-
-
+	
+	
 	/*
 	*  format_value()
 	*
@@ -277,22 +278,22 @@ class acf_field_{{field_name}} extends acf_field
 	*
 	*  @return	$value	- the modified value
 	*/
-
-	function format_value($value, $post_id, $field)
+	
+	function format_value( $value, $post_id, $field )
 	{
 		// defaults?
 		/*
 		$field = array_merge($this->defaults, $field);
 		*/
-
+		
 		// perhaps use $field['preview_size'] to alter the $value?
-
-
+		
+		
 		// Note: This function can be removed if not used
 		return $value;
 	}
-
-
+	
+	
 	/*
 	*  format_value_for_api()
 	*
@@ -308,22 +309,22 @@ class acf_field_{{field_name}} extends acf_field
 	*
 	*  @return	$value	- the modified value
 	*/
-
-	function format_value_for_api($value, $post_id, $field)
+	
+	function format_value_for_api( $value, $post_id, $field )
 	{
 		// defaults?
 		/*
 		$field = array_merge($this->defaults, $field);
 		*/
-
+		
 		// perhaps use $field['preview_size'] to alter the $value?
-
-
+		
+		
 		// Note: This function can be removed if not used
 		return $value;
 	}
-
-
+	
+	
 	/*
 	*  load_field()
 	*
@@ -337,14 +338,14 @@ class acf_field_{{field_name}} extends acf_field
 	*
 	*  @return	$field - the field array holding all the field options
 	*/
-
-	function load_field($field)
+	
+	function load_field( $field )
 	{
 		// Note: This function can be removed if not used
 		return $field;
 	}
-
-
+	
+	
 	/*
 	*  update_field()
 	*
@@ -360,17 +361,17 @@ class acf_field_{{field_name}} extends acf_field
 	*  @return	$field - the modified field
 	*/
 
-	function update_field($field, $post_id)
+	function update_field( $field, $post_id )
 	{
 		// Note: This function can be removed if not used
 		return $field;
 	}
 
-
+	
 }
 
 
 // create field
-new acf_field_{{field_name}}();
+new acf_field_FIELD_NAME();
 
 ?>
