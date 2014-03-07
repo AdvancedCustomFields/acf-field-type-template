@@ -40,7 +40,7 @@ class acf_field_FIELD_NAME extends acf_field {
 		
 		
 		/*
-		*  defaults (array) Array of default settings which are meerged into the field object. These are used later in settings
+		*  defaults (array) Array of default settings which are merged into the field object. These are used later in settings
 		*/
 		
 		$this->defaults = array(
@@ -49,7 +49,7 @@ class acf_field_FIELD_NAME extends acf_field {
 		
 		
 		/*
-		*  l10n (array) Array of strings that are used in javascript. This allows JS strings to be translated in PHP and loaded via:
+		*  l10n (array) Array of strings that are used in JavaScript. This allows JS strings to be translated in PHP and loaded via:
 		*  var message = acf._e('FIELD_NAME', 'error');
 		*/
 		
@@ -143,7 +143,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  input_admin_enqueue_scripts()
 	*
 	*  This action is called in the admin_enqueue_scripts action on the edit screen where your field is created.
-	*  Use this action to add css + javascript to assist your render_field() action.
+	*  Use this action to add CSS + JavaScript to assist your render_field() action.
 	*
 	*  @type	action (admin_enqueue_scripts)
 	*  @since	3.6
@@ -179,7 +179,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  input_admin_head()
 	*
 	*  This action is called in the admin_head action on the edit screen where your field is created.
-	*  Use this action to add css and javascript to assist your render_field() action.
+	*  Use this action to add CSS and JavaScript to assist your render_field() action.
 	*
 	*  @type	action (admin_head)
 	*  @since	3.6
@@ -205,7 +205,7 @@ class acf_field_FIELD_NAME extends acf_field {
    	*
    	*  This function is called once on the 'input' page between the head and footer
    	*  There are 2 situations where ACF did not load during the 'acf/input_admin_enqueue_scripts' and 
-   	*  'acf/input_admin_head' actions becuase ACF did not know it was going to be used. These situations are
+   	*  'acf/input_admin_head' actions because ACF did not know it was going to be used. These situations are
    	*  seen on comments / user edit forms on the front end. This function will always be called, and includes
    	*  $args that related to the current screen such as $args['post_id']
    	*
@@ -232,7 +232,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  input_admin_footer()
 	*
 	*  This action is called in the admin_footer action on the edit screen where your field is created.
-	*  Use this action to add css and javascript to assist your render_field() action.
+	*  Use this action to add CSS and JavaScript to assist your render_field() action.
 	*
 	*  @type	action (admin_footer)
 	*  @since	3.6
@@ -257,7 +257,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  field_group_admin_enqueue_scripts()
 	*
 	*  This action is called in the admin_enqueue_scripts action on the edit screen where your field is edited.
-	*  Use this action to add css + javascript to assist your render_field_options() action.
+	*  Use this action to add CSS + JavaScript to assist your render_field_options() action.
 	*
 	*  @type	action (admin_enqueue_scripts)
 	*  @since	3.6
@@ -280,7 +280,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  field_group_admin_head()
 	*
 	*  This action is called in the admin_head action on the edit screen where your field is edited.
-	*  Use this action to add css and javascript to assist your render_field_options() action.
+	*  Use this action to add CSS and JavaScript to assist your render_field_options() action.
 	*
 	*  @type	action (admin_head)
 	*  @since	3.6
@@ -309,7 +309,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  @date	23/01/13
 	*
 	*  @param	$value (mixed) the value found in the database
-	*  @param	$post_id (mixed) the $post_id from which the value was loaded from
+	*  @param	$post_id (mixed) the $post_id from which the value was loaded
 	*  @param	$field (array) the field array holding all the field options
 	*  @return	$value
 	*/
@@ -335,7 +335,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  @date	23/01/13
 	*
 	*  @param	$value (mixed) the value found in the database
-	*  @param	$post_id (mixed) the $post_id from which the value was loaded from
+	*  @param	$post_id (mixed) the $post_id from which the value was loaded
 	*  @param	$field (array) the field array holding all the field options
 	*  @return	$value
 	*/
@@ -387,7 +387,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  validate_value()
 	*
 	*  This filter is used to perform validation on the value prior to saving.
-	*  All values are validated regarless of the field's required setting. This allows you to validate and return
+	*  All values are validated regardless of the field's required setting. This allows you to validate and return
 	*  messages to the user if the value is not correct
 	*
 	*  @type	filter
@@ -405,7 +405,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	
 	function validate_value( $valid, $value, $field, $input ){
 		
-		// Basc usage
+		// Basic usage
 		if( $value < $field['custom_minimum_setting'] )
 		{
 			$valid = false;

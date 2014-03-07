@@ -47,7 +47,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  create_options()
 	*
 	*  Create extra options for your field. This is rendered when editing a field.
-	*  The value of $field['name'] can be used (like bellow) to save extra data to the $field
+	*  The value of $field['name'] can be used (like below) to save extra data to the $field
 	*
 	*  @type	action
 	*  @since	3.6
@@ -131,7 +131,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  input_admin_enqueue_scripts()
 	*
 	*  This action is called in the admin_enqueue_scripts action on the edit screen where your field is created.
-	*  Use this action to add css + javascript to assist your create_field() action.
+	*  Use this action to add CSS + JavaScript to assist your create_field() action.
 	*
 	*  $info	http://codex.wordpress.org/Plugin_API/Action_Reference/admin_enqueue_scripts
 	*  @type	action
@@ -144,7 +144,7 @@ class acf_field_FIELD_NAME extends acf_field {
 		// Note: This function can be removed if not used
 		
 		
-		// register acf scripts
+		// register ACF scripts
 		wp_register_script( 'acf-input-FIELD_NAME', $this->settings['dir'] . 'js/input.js', array('acf-input'), $this->settings['version'] );
 		wp_register_style( 'acf-input-FIELD_NAME', $this->settings['dir'] . 'css/input.css', array('acf-input'), $this->settings['version'] ); 
 		
@@ -167,7 +167,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  input_admin_head()
 	*
 	*  This action is called in the admin_head action on the edit screen where your field is created.
-	*  Use this action to add css and javascript to assist your create_field() action.
+	*  Use this action to add CSS and JavaScript to assist your create_field() action.
 	*
 	*  @info	http://codex.wordpress.org/Plugin_API/Action_Reference/admin_head
 	*  @type	action
@@ -185,7 +185,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  field_group_admin_enqueue_scripts()
 	*
 	*  This action is called in the admin_enqueue_scripts action on the edit screen where your field is edited.
-	*  Use this action to add css + javascript to assist your create_field_options() action.
+	*  Use this action to add CSS + JavaScript to assist your create_field_options() action.
 	*
 	*  $info	http://codex.wordpress.org/Plugin_API/Action_Reference/admin_enqueue_scripts
 	*  @type	action
@@ -203,7 +203,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  field_group_admin_head()
 	*
 	*  This action is called in the admin_head action on the edit screen where your field is edited.
-	*  Use this action to add css and javascript to assist your create_field_options() action.
+	*  Use this action to add CSS and JavaScript to assist your create_field_options() action.
 	*
 	*  @info	http://codex.wordpress.org/Plugin_API/Action_Reference/admin_head
 	*  @type	action
@@ -227,10 +227,10 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  @date	23/01/13
 	*
 	*  @param	$value - the value found in the database
-	*  @param	$post_id - the $post_id from which the value was loaded from
+	*  @param	$post_id - the $post_id from which the value was loaded
 	*  @param	$field - the field array holding all the field options
 	*
-	*  @return	$value - the value to be saved in te database
+	*  @return	$value - the value to be saved in the database
 	*/
 	
 	function load_value( $value, $post_id, $field )
@@ -297,7 +297,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	/*
 	*  format_value_for_api()
 	*
-	*  This filter is applied to the $value after it is loaded from the db and before it is passed back to the api functions such as the_field
+	*  This filter is applied to the $value after it is loaded from the db and before it is passed back to the API functions such as the_field
 	*
 	*  @type	filter
 	*  @since	3.6
