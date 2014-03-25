@@ -157,7 +157,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	
 	function input_admin_enqueue_scripts() {
 		
-		$dir = plugin_dir_path( __FILE__ );
+		$dir = plugin_dir_url( __FILE__ );
 		
 		
 		// register & include JS
