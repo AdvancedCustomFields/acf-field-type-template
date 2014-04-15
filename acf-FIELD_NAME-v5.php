@@ -65,10 +65,9 @@ class acf_field_FIELD_NAME extends acf_field {
 	
 	
 	/*
-	*  render_field_options()
+	*  render_field_settings()
 	*
-	*  Create extra options for your field. These are visible when editing a field.
-	*  All parameters of `acf_render_field_option` can be changed except 'prefix'
+	*  Create extra settings for your field. These are visible when editing a field
 	*
 	*  @type	action
 	*  @since	3.6
@@ -78,24 +77,25 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  @return	n/a
 	*/
 	
-	function render_field_options( $field ) {
+	function render_field_settings( $field ) {
 		
-		acf_render_field_option( $this->name, array(
+		/*
+		*  acf_render_field_setting
+		*
+		*  This function will create a setting for your field. Simply pass the $field parameter and an array of field settings.
+		*  The array of settings does not require a `value` or `prefix`; These settings are found from the $field array.
+		*
+		*  More than one setting can be added by copy/paste the above code.
+		*  Please note that you must also have a matching $defaults value for the field name (font_size)
+		*/
+		
+		acf_render_field_setting( $field, array(
 			'label'			=> __('Font Size','acf-FIELD_NAME'),
 			'instructions'	=> __('Customise the input font size','acf-FIELD_NAME'),
 			'type'			=> 'number',
 			'name'			=> 'font_size',
-			'value'			=> $field['font_size'],
 			'prepend'		=> 'px',
-			'prefix'		=> $field['prefix'],
 		));
-		
-		
-		/*
-		*  More than one options can be added by copy/paste the above code.
-		*  Please note that you must also have a matching $defaults value
-		*/
-		
 
 	}
 	
