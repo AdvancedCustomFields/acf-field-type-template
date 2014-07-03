@@ -354,7 +354,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	/*
 	*  format_value()
 	*
-	*  This filter is applied to the $value after it is loaded from the db and before it is passed to the render_field() function
+	*  This filter is appied to the $value after it is loaded from the db and before it is returned to the template
 	*
 	*  @type	filter
 	*  @since	3.6
@@ -363,20 +363,32 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  @param	$value (mixed) the value which was loaded from the database
 	*  @param	$post_id (mixed) the $post_id from which the value was loaded
 	*  @param	$field (array) the field array holding all the field options
-	*  @param	$template (boolean) true if value requires formatting for front end template function
-	*  @return	$value
+	*
+	*  @return	$value (mixed) the modified value
 	*/
 		
 	/*
 	
-	function format_value( $value, $post_id, $field, $template ) {
+	function format_value( $value, $post_id, $field ) {
 		
-		// bail early if not template function such as get_field()
-		if( !$template )
-		{
+		// bail early if no value
+		if( empty($value) ) {
+		
 			return $value
+			
 		}
 		
+		
+		// apply setting
+		if( $field['font_size'] > 12 ) { 
+			
+			// format the value
+			// $value = 'something';
+		
+		}
+		
+		
+		// return
 		return $value;
 	}
 	
