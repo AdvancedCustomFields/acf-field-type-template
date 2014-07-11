@@ -374,7 +374,7 @@ class acf_field_FIELD_NAME extends acf_field {
 		// bail early if no value
 		if( empty($value) ) {
 		
-			return $value
+			return $value;
 			
 		}
 		
