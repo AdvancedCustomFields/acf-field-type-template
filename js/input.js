@@ -54,7 +54,7 @@
 		*  @return	n/a
 		*/
 		
-		$(document).live('acf/setup_fields', function(e, postbox){
+		$(document).on('acf/setup_fields', function(e, postbox){
 			
 			$(postbox).find('.field[data-field_type="FIELD_NAME"]').each(function(){
 				
