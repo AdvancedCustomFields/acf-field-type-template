@@ -12,7 +12,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 
-
+// Exit if accessed directly
+if ( !defined( 'ABSPATH' ) ) exit;
 
 // 1. set text domain
 // Reference: https://codex.wordpress.org/Function_Reference/load_plugin_textdomain
