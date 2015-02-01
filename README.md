@@ -15,7 +15,7 @@ http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-typ
 * `acf-FIELD_NAME.php`: Main plugin file that includes the correct field file based on the ACF version
 * `FIELD_NAME-v5.php`: Field class compatible with ACF version 5 
 * `FIELD_NAME-v4.php`: Field class compatible with ACF version 4
-* `readme.txt`: WordPress readme file to be used by the wordpress repository
+* `readme.txt`: WordPress readme file to be used by the WordPress repository
 
 ### step 1.
 
@@ -24,8 +24,8 @@ This template uses `PLACEHOLDERS` such as `FIELD_NAME` throughout the file names
 * `FIELD_NAME`: Single word, no spaces. Underscores allowed. eg. donate_button
 * `FIELD_LABEL`: Multiple words, can include spaces, visible when selecting a field type. eg. Donate Button
 * `PLUGIN_URL`: Url to the github or WordPress repository
-* `PLUGIN_TAGS`: Comma seperated list of relevant tags
-* `DESCRIPTION`: Brief description of the field type, no longer than 2 lines
+* `PLUGIN_TAGS`: Comma separated list of relevant tags
+* `SHORT_DESCRIPTION`: Brief description of the field type, no longer than 2 lines
 * `EXTENDED_DESCRIPTION`: Extended description of the field type
 * `AUTHOR_NAME`: Name of field type author
 * `AUTHOR_URL`: URL to author's website
@@ -44,7 +44,7 @@ Edit this `README.md` file with the appropriate information and delete all conte
 
 # ACF FIELD_LABEL Field
 
-DESCRIPTION
+SHORT_DESCRIPTION
 
 -----------------------
 

@@ -3,7 +3,7 @@
 /*
 Plugin Name: Advanced Custom Fields: FIELD_LABEL
 Plugin URI: PLUGIN_URL
-Description: DESCRIPTION
+Description: SHORT_DESCRIPTION
 Version: 1.0.0
 Author: AUTHOR_NAME
 Author URI: AUTHOR_URL
