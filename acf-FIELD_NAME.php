@@ -44,6 +44,3 @@ function register_fields_FIELD_NAME() {
 add_action('acf/register_fields', 'register_fields_FIELD_NAME');	
 
 
-
-	
-?>
