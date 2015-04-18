@@ -542,5 +542,3 @@ class acf_field_FIELD_NAME extends acf_field {
 
 // create field
 new acf_field_FIELD_NAME();
-
-?>
