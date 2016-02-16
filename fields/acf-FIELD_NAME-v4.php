@@ -1,5 +1,13 @@
 <?php
 
+// exit if accessed directly
+if( ! defined( 'ABSPATH' ) ) exit;
+
+
+// check if class already exists
+if( !class_exists('acf_field_FIELD_NAME') ) :
+
+
 class acf_field_FIELD_NAME extends acf_field {
 	
 	// vars
@@ -367,11 +375,14 @@ class acf_field_FIELD_NAME extends acf_field {
 		return $field;
 	}
 
-	
 }
 
 
-// create field
+// create initialize
 new acf_field_FIELD_NAME();
+
+
+// class_exists check
+endif;
 
 ?>
