@@ -8,13 +8,15 @@ http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-typ
 
 ### Structure
 
-* `/css`:  folder for .css files.
-* `/images`: folder for image files
-* `/js`: folder for .js files
+* `/assets`:  folder for all asset files.
+* `/assets/css`:  folder for .css files.
+* `/assets/images`: folder for image files
+* `/assets/js`: folder for .js files
+* `/fields`:  folder for all field class files.
+* `/fields/FIELD_NAME-v5.php`: Field class compatible with ACF version 5 
+* `/fields/FIELD_NAME-v4.php`: Field class compatible with ACF version 4
 * `/lang`: folder for .pot, .po and .mo files
 * `acf-FIELD_NAME.php`: Main plugin file that includes the correct field file based on the ACF version
-* `FIELD_NAME-v5.php`: Field class compatible with ACF version 5 
-* `FIELD_NAME-v4.php`: Field class compatible with ACF version 4
 * `readme.txt`: WordPress readme file to be used by the WordPress repository
 
 ### step 1.

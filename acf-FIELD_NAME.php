@@ -11,39 +11,70 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+// exit if accessed directly
+if( ! defined( 'ABSPATH' ) ) exit;
 
 
+// check if class already exists
+if( !class_exists('acf_plugin_FIELD_NAME') ) :
 
-// 1. set text domain
-// Reference: https://codex.wordpress.org/Function_Reference/load_plugin_textdomain
-load_plugin_textdomain( 'acf-FIELD_NAME', false, dirname( plugin_basename(__FILE__) ) . '/lang/' ); 
-
-
-
-
-// 2. Include field type for ACF5
-// $version = 5 and can be ignored until ACF6 exists
-function include_field_types_FIELD_NAME( $version ) {
+class acf_plugin_FIELD_NAME {
 	
-	include_once('acf-FIELD_NAME-v5.php');
+	/*
+	*  __construct
+	*
+	*  This function will setup the class functionality
+	*
+	*  @type	function
+	*  @date	17/02/2016
+	*  @since	1.0.0
+	*
+	*  @param	n/a
+	*  @return	n/a
+	*/
+	
+	function __construct() {
+		
+		// set text domain
+		// https://codex.wordpress.org/Function_Reference/load_plugin_textdomain
+		load_plugin_textdomain( 'acf-FIELD_NAME', false, plugin_basename( dirname( __FILE__ ) ) . '/lang' ); 
+		
+		
+		// include field
+		add_action('acf/include_field_types', 	array($this, 'include_field_types')); // v5
+		add_action('acf/register_fields', 		array($this, 'include_field_types')); // v4
+		
+	}
+	
+	
+	/*
+	*  include_field_types
+	*
+	*  This function will include the field type class
+	*
+	*  @type	function
+	*  @date	17/02/2016
+	*  @since	1.0.0
+	*
+	*  @param	$version (int) major ACF version. Defaults to 4
+	*  @return	n/a
+	*/
+	
+	function include_field_types( $version = 4 ) {
+		
+		// include
+		include_once('fields/acf-FIELD_NAME-v' . $version . '.php');
+		
+	}
 	
 }
 
-add_action('acf/include_field_types', 'include_field_types_FIELD_NAME');	
+
+// initialize
+new acf_plugin_FIELD_NAME();
 
 
-
-
-// 3. Include field type for ACF4
-function register_fields_FIELD_NAME() {
-	
-	include_once('acf-FIELD_NAME-v4.php');
-	
-}
-
-add_action('acf/register_fields', 'register_fields_FIELD_NAME');	
-
-
-
+// class_exists check
+endif;
 	
 ?>
