@@ -169,12 +169,12 @@ class acf_field_FIELD_NAME extends acf_field {
 		
 		
 		// register & include JS
-		wp_register_script( 'acf-input-FIELD_NAME', "{$dir}js/input.js" );
+		wp_register_script( 'acf-input-FIELD_NAME', "{$dir}assets/js/input.js" );
 		wp_enqueue_script('acf-input-FIELD_NAME');
 		
 		
 		// register & include CSS
-		wp_register_style( 'acf-input-FIELD_NAME', "{$dir}css/input.css" ); 
+		wp_register_style( 'acf-input-FIELD_NAME', "{$dir}assets/css/input.css" ); 
 		wp_enqueue_style('acf-input-FIELD_NAME');
 		
 		
