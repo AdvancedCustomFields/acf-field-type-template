@@ -35,6 +35,14 @@ class acf_plugin_FIELD_NAME {
 	
 	function __construct() {
 		
+		// vars
+		$this->settings = array(
+			'version'	=> '1.0.0',
+			'url'		=> plugin_dir_url( __FILE__ ),
+			'path'		=> plugin_dir_path( __FILE__ )
+		);
+		
+		
 		// set text domain
 		// https://codex.wordpress.org/Function_Reference/load_plugin_textdomain
 		load_plugin_textdomain( 'acf-FIELD_NAME', false, plugin_basename( dirname( __FILE__ ) ) . '/lang' ); 

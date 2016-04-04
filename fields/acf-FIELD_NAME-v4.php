@@ -24,7 +24,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  @date	23/01/13
 	*/
 	
-	function __construct()
+	function __construct( $settings )
 	{
 		// vars
 		$this->name = 'FIELD_NAME';
@@ -42,11 +42,7 @@ class acf_field_FIELD_NAME extends acf_field {
     	
     	
     	// settings
-		$this->settings = array(
-			'path' => apply_filters('acf/helpers/get_path', __FILE__),
-			'dir' => apply_filters('acf/helpers/get_dir', __FILE__),
-			'version' => '1.0.0'
-		);
+		$this->settings = $settings;
 
 	}
 	
@@ -152,21 +148,19 @@ class acf_field_FIELD_NAME extends acf_field {
 		// Note: This function can be removed if not used
 		
 		
-		// register ACF scripts
-		wp_register_script( 'acf-input-FIELD_NAME', $this->settings['dir'] . 'assets/js/input.js', array('acf-input'), $this->settings['version'] );
-		wp_register_style( 'acf-input-FIELD_NAME', $this->settings['dir'] . 'assets/css/input.css', array('acf-input'), $this->settings['version'] ); 
+		// vars
+		$url = $this->settings['url'];
+		$version = $this->settings['version'];
 		
 		
-		// scripts
-		wp_enqueue_script(array(
-			'acf-input-FIELD_NAME',	
-		));
-
-		// styles
-		wp_enqueue_style(array(
-			'acf-input-FIELD_NAME',	
-		));
+		// register & include JS
+		wp_register_script( 'acf-input-FIELD_NAME', "{$url}assets/js/input.js", array('acf-input'), $version );
+		wp_enqueue_script('acf-input-FIELD_NAME');
 		
+		
+		// register & include CSS
+		wp_register_style( 'acf-input-FIELD_NAME', "{$url}assets/css/input.css", array('acf-input'), $version );
+		wp_enqueue_style('acf-input-FIELD_NAME');
 		
 	}
 	
@@ -378,8 +372,8 @@ class acf_field_FIELD_NAME extends acf_field {
 }
 
 
-// create initialize
-new acf_field_FIELD_NAME();
+// initialize
+new acf_field_FIELD_NAME( $this->settings );
 
 
 // class_exists check

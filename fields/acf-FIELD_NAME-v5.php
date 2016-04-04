@@ -24,7 +24,7 @@ class acf_field_FIELD_NAME extends acf_field {
 	*  @return	n/a
 	*/
 	
-	function __construct() {
+	function __construct( $settings ) {
 		
 		/*
 		*  name (string) Single word, no spaces. Underscores allowed
@@ -65,7 +65,14 @@ class acf_field_FIELD_NAME extends acf_field {
 			'error'	=> __('Error! Please enter a higher value', 'acf-FIELD_NAME'),
 		);
 		
-				
+		
+		/*
+		*  settings (array) Store plugin settings (url, path, version) as a reference for later use with assets
+		*/
+		
+		$this->settings = $settings;
+		
+		
 		// do not delete!
     	parent::__construct();
     	
@@ -165,18 +172,19 @@ class acf_field_FIELD_NAME extends acf_field {
 	
 	function input_admin_enqueue_scripts() {
 		
-		$dir = plugin_dir_url( __FILE__ );
+		// vars
+		$url = $this->settings['url'];
+		$version = $this->settings['version'];
 		
 		
 		// register & include JS
-		wp_register_script( 'acf-input-FIELD_NAME', "{$dir}assets/js/input.js" );
+		wp_register_script( 'acf-input-FIELD_NAME', "{$url}assets/js/input.js", array('acf-input'), $version );
 		wp_enqueue_script('acf-input-FIELD_NAME');
 		
 		
 		// register & include CSS
-		wp_register_style( 'acf-input-FIELD_NAME', "{$dir}assets/css/input.css" ); 
+		wp_register_style( 'acf-input-FIELD_NAME', "{$url}assets/css/input.css", array('acf-input'), $version );
 		wp_enqueue_style('acf-input-FIELD_NAME');
-		
 		
 	}
 	
@@ -548,8 +556,8 @@ class acf_field_FIELD_NAME extends acf_field {
 }
 
 
-// create initialize
-new acf_field_FIELD_NAME();
+// initialize
+new acf_field_FIELD_NAME( $this->settings );
 
 
 // class_exists check
