@@ -64,11 +64,15 @@ class acf_plugin_FIELD_NAME {
 	*  @date	17/02/2016
 	*  @since	1.0.0
 	*
-	*  @param	$version (int) major ACF version. Defaults to 4
+	*  @param	$version (int) major ACF version. Defaults to false
 	*  @return	n/a
 	*/
 	
-	function include_field_types( $version = 4 ) {
+	function include_field_types( $version = false ) {
+		
+		// support empty $version
+		if( !$version ) $version = 4;
+		
 		
 		// include
 		include_once('fields/acf-FIELD_NAME-v' . $version . '.php');
