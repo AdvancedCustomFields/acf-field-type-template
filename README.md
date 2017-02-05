@@ -1,7 +1,7 @@
 # ACF Field Type Template
 
 Welcome to the Advanced Custom Fields field type template repository.
-Here you will find a starter-kit for creating a new ACF field type. This start-kit will work as a normal WP plugin.
+Here you will find a starter-kit for creating a new ACF field type. This starter-kit will work as a normal WP plugin.
 
 For more information about creating a new field type, please read the following article:
 http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-type/
