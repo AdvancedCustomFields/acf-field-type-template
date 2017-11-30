@@ -5,10 +5,10 @@ if( ! defined( 'ABSPATH' ) ) exit;
 
 
 // check if class already exists
-if( !class_exists('NAMESPACE_field_FIELD_NAME') ) :
+if( !class_exists('NAMESPACE_acf_field_FIELD_NAME') ) :
 
 
-class NAMESPACE_field_FIELD_NAME extends acf_field {
+class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 	
 	
 	/*
@@ -557,7 +557,7 @@ class NAMESPACE_field_FIELD_NAME extends acf_field {
 
 
 // initialize
-new NAMESPACE_field_FIELD_NAME( $this->settings );
+new NAMESPACE_acf_field_FIELD_NAME( $this->settings );
 
 
 // class_exists check

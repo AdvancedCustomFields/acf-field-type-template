@@ -16,9 +16,9 @@ if( ! defined( 'ABSPATH' ) ) exit;
 
 
 // check if class already exists
-if( !class_exists('NAMESPACE_plugin_FIELD_NAME') ) :
+if( !class_exists('NAMESPACE_acf_plugin_FIELD_NAME') ) :
 
-class NAMESPACE_plugin_FIELD_NAME {
+class NAMESPACE_acf_plugin_FIELD_NAME {
 	
 	// vars
 	var $settings;
@@ -80,7 +80,7 @@ class NAMESPACE_plugin_FIELD_NAME {
 		
 		
 		// include
-		include_once('fields/class-NAMESPACE-field-FIELD-NAME-v' . $version . '.php');
+		include_once('fields/class-NAMESPACE-acf-field-FIELD-NAME-v' . $version . '.php');
 		
 	}
 	
@@ -88,7 +88,7 @@ class NAMESPACE_plugin_FIELD_NAME {
 
 
 // initialize
-new NAMESPACE_plugin_FIELD_NAME();
+new NAMESPACE_acf_plugin_FIELD_NAME();
 
 
 // class_exists check
