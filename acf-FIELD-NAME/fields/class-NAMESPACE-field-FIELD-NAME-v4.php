@@ -5,10 +5,10 @@ if( ! defined( 'ABSPATH' ) ) exit;
 
 
 // check if class already exists
-if( !class_exists('acf_field_FIELD_NAME') ) :
+if( !class_exists('NAMESPACE_field_FIELD_NAME') ) :
 
 
-class acf_field_FIELD_NAME extends acf_field {
+class NAMESPACE_field_FIELD_NAME extends acf_field {
 	
 	// vars
 	var $settings, // will hold info such as dir / path
@@ -29,7 +29,7 @@ class acf_field_FIELD_NAME extends acf_field {
 		// vars
 		$this->name = 'FIELD_NAME';
 		$this->label = __('FIELD_LABEL');
-		$this->category = __("Basic",'acf'); // Basic, Content, Choice, etc
+		$this->category = __("Basic",'TEXTDOMAIN'); // Basic, Content, Choice, etc
 		$this->defaults = array(
 			// add default here to merge into your field. 
 			// This makes life easy when creating the field options as you don't need to use any if( isset('') ) logic. eg:
@@ -75,8 +75,8 @@ class acf_field_FIELD_NAME extends acf_field {
 		?>
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
-		<label><?php _e("Preview Size",'acf'); ?></label>
-		<p class="description"><?php _e("Thumbnail is advised",'acf'); ?></p>
+		<label><?php _e("Preview Size",'TEXTDOMAIN'); ?></label>
+		<p class="description"><?php _e("Thumbnail is advised",'TEXTDOMAIN'); ?></p>
 	</td>
 	<td>
 		<?php
@@ -87,8 +87,8 @@ class acf_field_FIELD_NAME extends acf_field {
 			'value'		=>	$field['preview_size'],
 			'layout'	=>	'horizontal',
 			'choices'	=>	array(
-				'thumbnail' => __('Thumbnail'),
-				'something_else' => __('Something Else'),
+				'thumbnail' => __('Thumbnail', 'TEXTDOMAIN'),
+				'something_else' => __('Something Else', 'TEXTDOMAIN'),
 			)
 		));
 		
@@ -154,13 +154,13 @@ class acf_field_FIELD_NAME extends acf_field {
 		
 		
 		// register & include JS
-		wp_register_script( 'acf-input-FIELD_NAME', "{$url}assets/js/input.js", array('acf-input'), $version );
-		wp_enqueue_script('acf-input-FIELD_NAME');
+		wp_register_script('TEXTDOMAIN', "{$url}assets/js/input.js", array('acf-input'), $version);
+		wp_enqueue_script('TEXTDOMAIN');
 		
 		
 		// register & include CSS
-		wp_register_style( 'acf-input-FIELD_NAME', "{$url}assets/css/input.css", array('acf-input'), $version );
-		wp_enqueue_style('acf-input-FIELD_NAME');
+		wp_register_style('TEXTDOMAIN', "{$url}assets/css/input.css", array('acf-input'), $version);
+		wp_enqueue_style('TEXTDOMAIN');
 		
 	}
 	
@@ -373,7 +373,7 @@ class acf_field_FIELD_NAME extends acf_field {
 
 
 // initialize
-new acf_field_FIELD_NAME( $this->settings );
+new NAMESPACE_field_FIELD_NAME( $this->settings );
 
 
 // class_exists check

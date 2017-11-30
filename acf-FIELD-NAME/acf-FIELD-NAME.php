@@ -16,9 +16,13 @@ if( ! defined( 'ABSPATH' ) ) exit;
 
 
 // check if class already exists
-if( !class_exists('acf_plugin_FIELD_NAME') ) :
+if( !class_exists('NAMESPACE_plugin_FIELD_NAME') ) :
 
-class acf_plugin_FIELD_NAME {
+class NAMESPACE_plugin_FIELD_NAME {
+	
+	// vars
+	var $settings;
+	
 	
 	/*
 	*  __construct
@@ -35,7 +39,8 @@ class acf_plugin_FIELD_NAME {
 	
 	function __construct() {
 		
-		// vars
+		// settings
+		// - these will be passed into the field class.
 		$this->settings = array(
 			'version'	=> '1.0.0',
 			'url'		=> plugin_dir_url( __FILE__ ),
@@ -45,7 +50,7 @@ class acf_plugin_FIELD_NAME {
 		
 		// set text domain
 		// https://codex.wordpress.org/Function_Reference/load_plugin_textdomain
-		load_plugin_textdomain( 'acf-FIELD_NAME', false, plugin_basename( dirname( __FILE__ ) ) . '/lang' ); 
+		load_plugin_textdomain( 'TEXTDOMAIN', false, plugin_basename( dirname( __FILE__ ) ) . '/lang' ); 
 		
 		
 		// include field
@@ -75,7 +80,7 @@ class acf_plugin_FIELD_NAME {
 		
 		
 		// include
-		include_once('fields/acf-FIELD_NAME-v' . $version . '.php');
+		include_once('fields/class-NAMESPACE-field-FIELD-NAME-v' . $version . '.php');
 		
 	}
 	
@@ -83,7 +88,7 @@ class acf_plugin_FIELD_NAME {
 
 
 // initialize
-new acf_plugin_FIELD_NAME();
+new NAMESPACE_plugin_FIELD_NAME();
 
 
 // class_exists check

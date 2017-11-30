@@ -1,8 +1,8 @@
 === Advanced Custom Fields: FIELD_LABEL Field ===
 Contributors: AUTHOR_NAME
 Tags: PLUGIN_TAGS
-Requires at least: 3.5
-Tested up to: 3.8.1
+Requires at least: 3.6.0
+Tested up to: 4.9.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -21,10 +21,10 @@ This ACF field type is compatible with:
 
 == Installation ==
 
-1. Copy the `acf-FIELD_NAME` folder into your `wp-content/plugins` folder
+1. Copy the `acf-FIELD-NAME` folder into your `wp-content/plugins` folder
 2. Activate the FIELD_LABEL plugin via the plugins admin page
 3. Create a new field via ACF and select the FIELD_LABEL type
-4. Please refer to the description for more info regarding the field type settings
+4. Read the description above for usage instructions
 
 == Changelog ==
 

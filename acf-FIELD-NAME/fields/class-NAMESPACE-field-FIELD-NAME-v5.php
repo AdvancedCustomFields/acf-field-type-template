@@ -5,10 +5,10 @@ if( ! defined( 'ABSPATH' ) ) exit;
 
 
 // check if class already exists
-if( !class_exists('acf_field_FIELD_NAME') ) :
+if( !class_exists('NAMESPACE_field_FIELD_NAME') ) :
 
 
-class acf_field_FIELD_NAME extends acf_field {
+class NAMESPACE_field_FIELD_NAME extends acf_field {
 	
 	
 	/*
@@ -37,7 +37,7 @@ class acf_field_FIELD_NAME extends acf_field {
 		*  label (string) Multiple words, can include spaces, visible when selecting a field type
 		*/
 		
-		$this->label = __('FIELD_LABEL', 'acf-FIELD_NAME');
+		$this->label = __('FIELD_LABEL', 'TEXTDOMAIN');
 		
 		
 		/*
@@ -62,7 +62,7 @@ class acf_field_FIELD_NAME extends acf_field {
 		*/
 		
 		$this->l10n = array(
-			'error'	=> __('Error! Please enter a higher value', 'acf-FIELD_NAME'),
+			'error'	=> __('Error! Please enter a higher value', 'TEXTDOMAIN'),
 		);
 		
 		
@@ -105,8 +105,8 @@ class acf_field_FIELD_NAME extends acf_field {
 		*/
 		
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Font Size','acf-FIELD_NAME'),
-			'instructions'	=> __('Customise the input font size','acf-FIELD_NAME'),
+			'label'			=> __('Font Size','TEXTDOMAIN'),
+			'instructions'	=> __('Customise the input font size','TEXTDOMAIN'),
 			'type'			=> 'number',
 			'name'			=> 'font_size',
 			'prepend'		=> 'px',
@@ -178,13 +178,13 @@ class acf_field_FIELD_NAME extends acf_field {
 		
 		
 		// register & include JS
-		wp_register_script( 'acf-input-FIELD_NAME', "{$url}assets/js/input.js", array('acf-input'), $version );
-		wp_enqueue_script('acf-input-FIELD_NAME');
+		wp_register_script('TEXTDOMAIN', "{$url}assets/js/input.js", array('acf-input'), $version);
+		wp_enqueue_script('TEXTDOMAIN');
 		
 		
 		// register & include CSS
-		wp_register_style( 'acf-input-FIELD_NAME', "{$url}assets/css/input.css", array('acf-input'), $version );
-		wp_enqueue_style('acf-input-FIELD_NAME');
+		wp_register_style('TEXTDOMAIN', "{$url}assets/css/input.css", array('acf-input'), $version);
+		wp_enqueue_style('TEXTDOMAIN');
 		
 	}
 	
@@ -443,7 +443,7 @@ class acf_field_FIELD_NAME extends acf_field {
 		// Advanced usage
 		if( $value < $field['custom_minimum_setting'] )
 		{
-			$valid = __('The value is too little!','acf-FIELD_NAME'),
+			$valid = __('The value is too little!','TEXTDOMAIN'),
 		}
 		
 		
@@ -557,7 +557,7 @@ class acf_field_FIELD_NAME extends acf_field {
 
 
 // initialize
-new acf_field_FIELD_NAME( $this->settings );
+new NAMESPACE_field_FIELD_NAME( $this->settings );
 
 
 // class_exists check
