@@ -33,8 +33,8 @@
 		*  @return	n/a
 		*/
 		
-		acf.add_action('ready_field/type=FIELD_NAME', 'initialize_field');
-		acf.add_action('append_field/type=FIELD_NAME', 'initialize_field');
+		acf.add_action('ready_field/type=FIELD_NAME', initialize_field);
+		acf.add_action('append_field/type=FIELD_NAME', initialize_field);
 		
 		
 	} else {
