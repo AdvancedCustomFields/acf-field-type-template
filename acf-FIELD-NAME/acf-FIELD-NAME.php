@@ -19,11 +19,11 @@ if( ! defined( 'ABSPATH' ) ) exit;
 if( !class_exists('NAMESPACE_acf_plugin_FIELD_NAME') ) :
 
 class NAMESPACE_acf_plugin_FIELD_NAME {
-	
+
 	// vars
 	var $settings;
-	
-	
+
+
 	/*
 	*  __construct
 	*
@@ -36,9 +36,9 @@ class NAMESPACE_acf_plugin_FIELD_NAME {
 	*  @param	n/a
 	*  @return	n/a
 	*/
-	
+
 	function __construct() {
-		
+
 		// settings
 		// - these will be passed into the field class.
 		$this->settings = array(
@@ -46,20 +46,39 @@ class NAMESPACE_acf_plugin_FIELD_NAME {
 			'url'		=> plugin_dir_url( __FILE__ ),
 			'path'		=> plugin_dir_path( __FILE__ )
 		);
-		
-		
+
+
 		// set text domain
-		// https://codex.wordpress.org/Function_Reference/load_plugin_textdomain
-		load_plugin_textdomain( 'TEXTDOMAIN', false, plugin_basename( dirname( __FILE__ ) ) . '/lang' ); 
-		
-		
+		add_action('plugins_loaded', array($this, 'load_plugin_textdomain'));
+
+
 		// include field
 		add_action('acf/include_field_types', 	array($this, 'include_field_types')); // v5
 		add_action('acf/register_fields', 		array($this, 'include_field_types')); // v4
-		
+
 	}
-	
-	
+
+
+	/*
+	*  load_plugin_textdomain
+	*
+	*  This function will load the textdomain file
+	*
+	*  @type   function
+	*  @date   20/03/2018
+	*  @since  1.0.0
+	*
+	*  @param  n/a
+	*  @return n/a
+	*/
+    function load_plugin_textdomain() {
+
+    	// https://codex.wordpress.org/Function_Reference/load_plugin_textdomain
+		load_plugin_textdomain( 'TEXTDOMAIN', false, plugin_basename( dirname( __FILE__ ) ) . '/lang' );
+
+    }
+
+
 	/*
 	*  include_field_types
 	*
@@ -72,18 +91,18 @@ class NAMESPACE_acf_plugin_FIELD_NAME {
 	*  @param	$version (int) major ACF version. Defaults to false
 	*  @return	n/a
 	*/
-	
+
 	function include_field_types( $version = false ) {
-		
+
 		// support empty $version
 		if( !$version ) $version = 4;
-		
-		
+
+
 		// include
 		include_once('fields/class-NAMESPACE-acf-field-FIELD-NAME-v' . $version . '.php');
-		
+
 	}
-	
+
 }
 
 
@@ -93,5 +112,5 @@ new NAMESPACE_acf_plugin_FIELD_NAME();
 
 // class_exists check
 endif;
-	
+
 ?>
