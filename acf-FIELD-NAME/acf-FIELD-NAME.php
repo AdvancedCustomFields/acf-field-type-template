@@ -63,11 +63,15 @@ class NAMESPACE_acf_plugin_FIELD_NAME {
 	*  @date	17/02/2016
 	*  @since	1.0.0
 	*
-	*  @param	$version (int) major ACF version. Defaults to 4
+	*  @param	$version (int) major ACF version. Defaults to false
 	*  @return	void
 	*/
 	
-	function include_field( $version = 4 ) {
+	function include_field( $version = false ) {
+		
+		// support empty $version
+		if( !$version ) $version = 4;
+		
 		
 		// load textdomain
 		load_plugin_textdomain( 'TEXTDOMAIN', false, plugin_basename( dirname( __FILE__ ) ) . '/lang' ); 
