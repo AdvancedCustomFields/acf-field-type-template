@@ -1,5 +1,5 @@
-# ACF Field Type Template
+# ACF Field Type Template (Deprecated)
 
-Welcome to the official Advanced Custom Fields - Field Type Template repository on GitHub. Here you will find a starter-kit for creating a new field type plugin.
+This is an archived repository for the ACF Field Type Template for ACF v4 and V5. A new field type template for ACF v6 is now available at https://github.com/AdvancedCustomFields/acf-example-field-type.
 
 Looking for documentation? Please read the [Creating a new field type guide](https://www.advancedcustomfields.com/resources/creating-a-new-field-type/).
